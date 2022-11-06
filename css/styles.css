@@ -55,6 +55,7 @@ ul {
 .link:hover,
 .link:focus {
     color:var(--main-color-3);
+    
 }
 /* remove the underline */
 .link-decorate {
@@ -81,6 +82,7 @@ ul {
         HEADER 
    --------------- */
 .header-background{
+   
     background-color:var(--main-color-4) ;
  /* ADD border-bottom header */
     border-bottom: 1px solid #ECECEC;
@@ -124,6 +126,7 @@ ul {
 .site-nav {
     display: flex;
     
+       
 }
 
 .nav-item:not(:last-child) {
@@ -132,6 +135,7 @@ ul {
 
 .link-text {
     display: block;
+    position: relative;
     padding-top: 32px;
     padding-bottom: 32px;
 
@@ -141,10 +145,32 @@ ul {
     color: var(--main-color-1);
     text-decoration: none;
 
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
 }
-.accent-color {
+/* add marker active page */
+.link-text.active {
+    color:var(--accent-color); 
+}
+/* drove line under links */
+.link-text.active::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+
+    position:absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* .accent-color {
     color:var(--accent-color);
-}
+} */
 .contacts {
     display: flex;
     margin-left: auto;
@@ -164,6 +190,11 @@ ul {
     line-height: calc(16/14);
     letter-spacing: 0.02em;
     color:var(--main-color-2);
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
 
      
 }
@@ -220,16 +251,21 @@ ul {
     border: none;
     width: 216px;
    
-    background:  var(--main-color-3);
+    background-color:  var(--main-color-3);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     cursor: pointer;
+
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function:
+     cubic-bezier(0.4, 0, 0.2, 1);
 } 
 /* Effects hiro button */
 .btn:hover,
 .btn:focus {
-    background-color: var(--focus-btn-hero );
-    /* color: var( --main-color-1); */
+    background-color:var(--focus-btn-hero );
+   
 }
 /* section peculiarities background */
 .back-peculiarities {
@@ -274,10 +310,10 @@ ul {
     background: var(--our-team-background);
     border-radius: 4px;
 }
- .icon-bnf {
+ /* .icon-bnf {
 
     
- }
+ } */
 
 /* Benefits title style */
 .benefits-title {
@@ -322,15 +358,44 @@ ul {
 
 .our-work-list {
     display: flex;
+    
   
 }
 .work-items {
     margin-right: 30px;
+    position: relative;
 }
 .work-img {
     display: block;
+   
 }
+.blur-our-work {
+    position: absolute;
+    bottom: 0;
+    left: 0;
 
+    width: 370px;
+    height: 70px;
+    background-image: linear-gradient(rgba(47, 48, 58, 0.8), rgba(47, 48, 58, 0.8));
+
+}
+.blur-text {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50% ,-50%);
+
+
+    font-style: normal;
+    font-weight: 700;
+    line-height: calc(16/14);
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--main-color-4)
+
+   
+}
 /*  Section our team style text */
 
 .our-team-background {
@@ -419,6 +484,14 @@ ul {
     background-color: var(--main-color-4);
     border-radius: 50%;
     border: none;
+
+   
+    transition-property: color background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+
+
 }
 .social-icon {
     fill: currentColor;
@@ -468,6 +541,9 @@ ul {
 
     color: var(--social-icon-defolt-color);
 
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customer-logo {
     fill:currentColor;
@@ -526,6 +602,10 @@ ul {
     color:var(--main-color-4);
 
     text-decoration: none;
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link-footer {
     font-size: 14px;
@@ -534,6 +614,10 @@ ul {
     color: rgba(255, 255, 255, 0.6);
 
     text-decoration: none;
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-title {
     margin-bottom: 20px;
@@ -565,17 +649,22 @@ ul {
     background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
     border-radius: 50%;
     border: none;
+
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function:
+     cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-icon {
-    fill:currentColor:
+    fill:currentColor;
 
 }
 
 .footer-links-social:hover,
 .footer-links-social:focus {
     background-color: var(--accent-color);
-}
+}   
 
 
 
@@ -608,6 +697,11 @@ ul {
     background-color:var(-main-background-color);
     border-radius: 4px;
     cursor: pointer;
+
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function:
+     cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filter-button:hover,
 .filter-button:focus {
@@ -654,19 +748,67 @@ ul {
     gap: 30px;
     /* backgrounteam-info */
     color: var(--main-color-4);
+
+   
 }
 .projects-link {
+
     flex-basis: calc((100% - 30px * 2) /3 );
+    box-shadow: none;
+    transition-property: box-shadow; 
+    transition-duration: 250ms ;
+    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1); 
 }
+
 .img-block {
     display: block;
+    
+
 }
-/* Effects on the card */
-.img-block:hover,
-.img-block:focus {
+.project-thumb {
+   position:relative ;
+   overflow: hidden;
+}
+.overlay {
+    position:absolute;
+    top: 0;
+    left: 0;
+
+    transform: translateY(101%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    background-image: linear-gradient(rgba(33, 150, 243, 0.9),
+     rgba(33, 150, 243, 0.9));
+
+    transition-property: transform ;
+    transition-duration:250ms; 
+    transition-timing-function:
+        cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+.projects-link:hover .overlay,
+.projects-link:hover 
+{
+    transform: translateY(0%);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
     0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.overlay-text {
+padding: 0px 24px;
+
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: calc(28/18);
+letter-spacing: 0.03em;
+
+color:var(--main-color-4);
+    
 }
 
 .project-wrapper {
