@@ -689,7 +689,7 @@ ul {
    
     min-width: 528px;
     min-height: 581px;
-
+    border-radius: 4px;
     background-color: var(--main-color-4);
 }
 .close-btn {
